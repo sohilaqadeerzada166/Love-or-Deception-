@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>عشق واقعی یا فریب؟ | Love or Deception</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- صفحه خوش‌آمدگویی -->
+        <section id="welcome-screen" class="screen">
+
+            <h1 id="game-title">❤️ عشق واقعی یا فریب؟</h1>
+
+            <p id="welcome-description">
+                در این بازی، نشانه‌های عشق واقعی و فریب را بشناس!
+            </p>
+
+            <!-- انتخاب زبان -->
+            <div class="form-group">
+                <label for="language">زبان / Language</label>
+
+                <select id="language">
+                    <option value="fa">دری / فارسی</option>
+                    <option value="en">English</option>
+                </select>
+            </div>
+
+            <!-- جنسیت بازیکن -->
+            <div class="form-group">
+                <label for="your-gender">جنسیت شما</label>
+
+                <select id="your-gender">
+                    <option value="girl">دختر</option>
+                    <option value="boy">پسر</option>
+                </select>
+            </div>
+
+            <!-- جنسیت شخص مقابل -->
+            <div class="form-group">
+                <label for="partner-gender">جنسیت شخص مقابل</label>
+
+                <select id="partner-gender">
+                    <option value="boy">پسر</option>
+                    <option value="girl">دختر</option>
+                </select>
+            </div>
+
+            <!-- شخصیت شخص مقابل -->
+            <div class="form-group">
+                <label for="character-type">شخصیت طرف مقابل</label>
+
+                <select id="character-type">
+                    <option value="honest">صادق و جدی</option>
+                    <option value="shy">خجالتی</option>
+                    <option value="controlling">کنترول‌گر</option>
+                    <option value="vague">نامشخص و مبهم</option>
+                </select>
+            </div>
+
+            <!-- فضای داستان -->
+            <div class="form-group">
+                <label for="story-setting">فضای داستان</label>
+
+                <select id="story-setting">
+                    <option value="afghanistan">افغانستان و خانواده</option>
+                    <option value="modern">زندگی امروزی</option>
+                </select>
+            </div>
+
+            <!-- انتخاب ظاهر بازی -->
+            <div class="form-group">
+                <label for="theme">ظاهر بازی</label>
+
+                <select id="theme">
+                    <option value="romantic">رمانتیک ❤️</option>
+                    <option value="messenger">چت و پیام‌رسان 💬</option>
+                    <option value="cinematic">سینمایی 🎬</option>
+                </select>
+            </div>
+
+            <button id="start-button" type="button">
+                شروع بازی 💖
+            </button>
+
+        </section>
+
+
+        <!-- صفحه چت و داستان -->
+        <section id="chat-screen" class="screen" hidden>
+
+            <header class="chat-header">
+
+                <button id="back-button" type="button">
+                    ⬅ برگشت
+                </button>
+
+                <div class="character-info">
+                    <div id="character-avatar" class="avatar">
+                        💌
+                    </div>
+
+                    <div>
+                        <h2 id="character-name">شخص مقابل</h2>
+                        <p id="character-status">آنلاین</p>
+                    </div>
+                </div>
+
+                <div class="score-box">
+                    <span id="trust-label">اعتماد:</span>
+                    <strong id="trust-score">50</strong>
+                </div>
+
+            </header>
+
+
+            <!-- مرحله‌های داستان -->
+            <div class="progress-container">
+                <p id="stage-label">مرحله ۱ از ۵</p>
+
+                <div class="progress-bar">
+                    <div id="progress-fill" class="progress-fill"></div>
+                </div>
+            </div>
+
+
+            <!-- عنوان مرحله -->
+            <h2 id="stage-title">آشنایی اولیه</h2>
+
+            <!-- پیام داستان -->
+            <div id="story-description" class="story-description">
+                داستان از اینجا شروع می‌شود...
+            </div>
+
+            <!-- پیام شخص مقابل -->
+            <div id="chat-messages" class="chat-messages"></div>
+
+            <!-- گزینه‌های پاسخ -->
+            <div id="reply-options" class="reply-options"></div>
+
+            <!-- پاسخ دلخواه بازیکن -->
+            <form id="custom-reply-form">
+
+                <label for="custom-reply" id="custom-reply-label">
+                    پاسخ خود را بنویسید:
+                </label>
+
+                <textarea
+                    id="custom-reply"
+                    rows="3"
+                    placeholder="پاسخ خود را اینجا بنویسید..."
+                ></textarea>
+
+                <button id="send-reply-button" type="submit">
+                    ارسال پاسخ
+                </button>
+
+            </form>
+
+        </section>
+
+
+        <!-- صفحه نتیجه نهایی -->
+        <section id="ending-screen" class="screen" hidden>
+
+            <h1 id="ending-title">نتیجه بازی 💖</h1>
+
+            <div id="ending-icon" class="ending-icon">
+                💌
+            </div>
+
+            <h2 id="ending-result"></h2>
+
+            <p id="ending-description"></p>
+
+            <!-- امتیاز نهایی -->
+            <div class="final-score">
+                <span id="final-score-label">امتیاز اعتماد:</span>
+                <strong id="final-score">50</strong>
+            </div>
+
+            <!-- تحلیل رفتار -->
+            <div class="analysis-box">
+                <h3 id="analysis-title">🔍 تحلیل رفتار</h3>
+                <div id="analysis-content"></div>
+            </div>
+
+            <!-- نکته آموزشی -->
+            <div class="lesson-box">
+                <h3 id="lesson-title">💡 نکته مهم</h3>
+                <p id="lesson-content"></p>
+            </div>
+
+            <button id="restart-button" type="button">
+                بازی دوباره 🔄
+            </button>
+
+        </section>
+
+    </div>
+
+    <!-- فایل جاوااسکریپت -->
+    <script src="script.js"></script>
+
+</body>
+</html>
